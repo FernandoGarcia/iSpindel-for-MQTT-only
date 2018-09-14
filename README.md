@@ -1,0 +1,1 @@
+# iSpindle-for-MQTT-only
