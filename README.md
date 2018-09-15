@@ -1,8 +1,8 @@
-It's a modified version of iSpindel 6.0.0 by Samuel Lang available at: https://github.com/universam1/iSpindel
+It's a modified version of iSpindel 6.0.0 by Samuel Lang available at: <https://github.com/universam1/iSpindel>
 
 It was modified to support only MQTT.
 
-It's configured to connect directly to my broker at: https://ferduino.com
+It's configured to connect directly to my broker at: <https://ferduino.com>
 
 Defaut board is an ESP-WROOM-02 motherboard.
 
@@ -20,7 +20,7 @@ Upload interval: {"interval": 120}. Range: 11 ~ 3599 S;
 
 Battery factor: {"factor": 191.8}. Range: any value;
 
-Temperature unit: {"unit": "C"}. Options: "f" to Fahrenheit and "c" to Celsius.
+Temperature unit: {"unit": "c"}. Options: "f" to Fahrenheit and "c" to Celsius.
 
 Daylight saving time: {"summer": "false"}. Options: "true" to enable and "false" to disable;
 
