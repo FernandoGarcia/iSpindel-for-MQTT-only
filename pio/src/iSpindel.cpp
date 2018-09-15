@@ -1334,6 +1334,7 @@ void setup()
       my_timestamp = time(&this_second);
       CONSOLE(".");
       delay(100);
+      i++;
     }
     CONSOLELN();
 
