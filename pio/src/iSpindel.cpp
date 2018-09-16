@@ -1326,10 +1326,10 @@ void setup()
       offsetTMZ -= 3600; // workaround to set DST.
     }
 
-    configTime(offsetTMZ, 0, "pool.ntp.org", "time.nist.gov");
+    configTime(offsetTMZ, 0, NTP_SERVER);
 
     CONSOLE(F("\nConnecting to NTP server "));
-    while (!this_second && i < 10)
+    while (!this_second && i < 20)
     {
       my_timestamp = time(&this_second);
       CONSOLE(".");
