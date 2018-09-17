@@ -80,7 +80,6 @@ uint8_t my_tempscale = TEMP_CELSIUS;
 
 int my_timeZone  = -3;
 bool isSummerTime = false;
-int my_timestamp = 1536939980; // Fri, 14 Sep 2018 15:46:20 GMT
 
 uint32_t DSreqTime;
 float pitch, roll;
@@ -89,8 +88,6 @@ int16_t ax, ay, az;
 float Volt, Temperatur, Tilt, Gravity;   // , corrGravity;
 
 bool DSrequested = false;
-
-time_t this_second = 0;
 
 void callback(MQTTClient *client, char topic[], char payload[], int payload_length);
 
@@ -679,7 +676,6 @@ void uploadData()
   if (_mqttClient.connected())
   {
     Json[F("username")] = my_username;
-    Json[F("time")]        = my_timestamp;
     Json[F("tilt")]        = Tilt;
     Json[F("temperature")] = scaleTemperature(Temperatur);
     Json[F("temp_units")]  = tempScaleLabel();
@@ -1318,36 +1314,6 @@ void setup()
 
   if (WiFi.status() == WL_CONNECTED)
   {
-    int offsetTMZ = (my_timeZone * 3600);
-    byte i = 0;
-
-    if(isSummerTime == true)
-    {
-      offsetTMZ -= 3600; // workaround to set DST.
-    }
-
-    configTime(offsetTMZ, 0, NTP_SERVER);
-
-    CONSOLE(F("\nConnecting to NTP server "));
-    while (!this_second && i < 20)
-    {
-      my_timestamp = time(&this_second);
-      CONSOLE(".");
-      delay(100);
-      i++;
-    }
-    CONSOLELN();
-
-    if (!this_second)
-    {
-      CONSOLE("\nCan't get time");
-    }
-    else
-    {
-      CONSOLE("\nCurrent time: ");
-      CONSOLE(String(ctime(&this_second)));
-    }
-
     CONSOLE(F("\nConnected. IP: "));
     CONSOLELN(WiFi.localIP());
 

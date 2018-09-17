@@ -24,9 +24,6 @@ extern Ticker flasher;
 #define MY_BROKER "www.ferduino.com"
 #define MY_PORT 1883
 
-#define NTP_SERVER "br.pool.ntp.org" // Select the server with smaller latency for your location.
-                                     // More info at: www.ntppool.org
-
 #define WM_DEBUG false
 
 #ifdef NO_CONSOLE

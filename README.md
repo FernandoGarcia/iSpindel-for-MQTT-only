@@ -4,9 +4,6 @@ It was modified to support only MQTT.
 
 It's configured to connect directly to my broker at: <https://ferduino.com>
 
-You should select the better NTP server for your region and place the url in global variable `NTP_SERVER`
-You can find more informations here: <https://ntppool.org>
-
 Defaut board is an ESP-WROOM-02 motherboard.
 
 Pins used are:
