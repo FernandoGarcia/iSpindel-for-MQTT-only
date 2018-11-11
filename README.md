@@ -1,3 +1,5 @@
+# iSpindel - *DIY tilt hydrometer*  [![Build Status](https://travis-ci.com/FernandoGarcia/iSpindel-for-MQTT-only.svg?branch=master)](https://travis-ci.com/FernandoGarcia/iSpindel-for-MQTT-only)
+
 It's a modified version of iSpindel 6.0.0 by Samuel Lang available at: <https://github.com/universam1/iSpindel>
 
 It was modified to support only MQTT.
