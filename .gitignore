@@ -16,3 +16,4 @@ iSpindel/__vm/
 .clang_complete
 .gcc-flags.json
 include/readme.txt
+.pio
