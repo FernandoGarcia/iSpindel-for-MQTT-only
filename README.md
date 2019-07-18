@@ -6,7 +6,13 @@ It was modified to support only MQTT.
 
 It's configured to connect directly to my broker at: <https://ferduino.com>
 
-Defaut board is an ESP-WROOM-02 motherboard.
+*The board used for this build is an ESP-WROOM-02 motherboard. This board has high power consumption and is not viable to battery powered project. So is needed find a way to make it more efficient.*
+
+Bellow you can find more details about this type of issue:
+
+https://tinker.yeoman.com.au/2016/05/29/running-nodemcu-on-a-battery-esp8266-low-power-consumption-revisited/
+
+https://jasiek.me/2016/04/24/running-wemos-nodemcu-off-a-18650-battery.html
 
 Pins used are:
 
@@ -37,3 +43,40 @@ Log: tilt/log/username/password
 Configuration: tilt/config/username/password
 
 Response: tilt/response/username/password
+
+## 3D printed parts
+Sled: http://www.thingiverse.com/thing:3075683
+
+Mold to cast lead counterweight: http://www.thingiverse.com/thing:3082397
+
+## Build details
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/1.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/2.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/3.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/4.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/5.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/6.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/7.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/8.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/9.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/10.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/11.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/12.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/13.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/14.jpg">
+
+<img width="50%" src="https://github.com/FernandoGarcia/iSpindel-for-MQTT-only/blob/master/Build%20details/15.jpg">
