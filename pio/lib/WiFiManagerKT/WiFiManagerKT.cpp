@@ -241,12 +241,12 @@ void WiFiManager::handleUpdateDone()
   { // If caprive portal redirect instead of displaying the page.
     return;
   }
-  String page = FPSTR(HTTP_HEAD);
+  String page = FPSTR(HTTP_HEADER);
   page.replace("{v}", "Options");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
   page += _customHeadElement;
-  page += FPSTR(HTTP_HEAD_END);
+  page += FPSTR(HTTP_HEADER_END);
   page += "<h1>";
   page += _apName;
   page += "</h1>";
@@ -598,12 +598,12 @@ void WiFiManager::handleRoot()
     return;
   }
   header();
-  String page = FPSTR(HTTP_HEAD);
+  String page = FPSTR(HTTP_HEADER);
   page.replace("{v}", "Options");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
   page += _customHeadElement;
-  page += FPSTR(HTTP_HEAD_END);
+  page += FPSTR(HTTP_HEADER_END);
   page += "<h2>";
   page += _apName;
   if (WiFi.SSID() != "")
@@ -634,12 +634,12 @@ void WiFiManager::handleRoot()
 void WiFiManager::handleWifi()
 {
   header();
-  String page = FPSTR(HTTP_HEAD);
+  String page = FPSTR(HTTP_HEADER);
   page.replace("{v}", "Configuration");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
   page += _customHeadElement;
-  page += FPSTR(HTTP_HEAD_END);
+  page += FPSTR(HTTP_HEADER_END);
   page += F("<h2>Configuration</h2><h3>WiFi settings</h3><br><label>Networks found:</label><br><br>");
   //Print list of WiFi networks that were found in earlier scan
   if (numberOfNetworks == 0)
@@ -824,12 +824,12 @@ void WiFiManager::handleWifiSave()
     optionalIPFromString(&_sta_static_sn, sn.c_str());
   }
 
-  String page = FPSTR(HTTP_HEAD);
+  String page = FPSTR(HTTP_HEADER);
   page.replace("{v}", "Credentials Saved");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
   page += _customHeadElement;
-  page += FPSTR(HTTP_HEAD_END);
+  page += FPSTR(HTTP_HEADER_END);
   page += FPSTR(HTTP_SAVED);
   page.replace("{v}", _apName);
   page.replace("{x}", _ssid);
@@ -846,12 +846,12 @@ void WiFiManager::handleServerClose()
 {
   DEBUG_WM(F("Server Close"));
   header();
-  String page = FPSTR(HTTP_HEAD);
+  String page = FPSTR(HTTP_HEADER);
   page.replace("{v}", "Close Server");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
   page += _customHeadElement;
-  page += FPSTR(HTTP_HEAD_END);
+  page += FPSTR(HTTP_HEADER_END);
   page += F("<div class=\"msg\">");
   page += F("My network is <strong>");
   page += WiFi.SSID();
@@ -871,12 +871,12 @@ void WiFiManager::handleInfo()
 {
   DEBUG_WM(F("Info"));
   header();
-  String page = FPSTR(HTTP_HEAD);
+  String page = FPSTR(HTTP_HEADER);
   page.replace("{v}", "Info");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
   page += _customHeadElement;
-  page += FPSTR(HTTP_HEAD_END);
+  page += FPSTR(HTTP_HEADER_END);
   page += F("<h2>WiFi Information</h2>");
   // page += F("Android app from <a href=\"https://play.google.com/store/apps/details?id=au.com.umranium.espconnect\">https://play.google.com/store/apps/details?id=au.com.umranium.espconnect</a> provides easier ESP WiFi configuration.<p/>");
   reportStatus(page);
@@ -958,13 +958,13 @@ void WiFiManager::handleiSpindel()
   // we reset the timeout
   _configPortalStart = millis();
 
-  String page = FPSTR(HTTP_HEAD);
+  String page = FPSTR(HTTP_HEADER);
   page.replace("{v}", "Current parameters");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
   page += _customHeadElement;
   page += F("<META HTTP-EQUIV=\"refresh\" CONTENT=\"2\">");
-  page += FPSTR(HTTP_HEAD_END);
+  page += FPSTR(HTTP_HEADER_END);
   page += F("<h2>Current parameters</h2><hr>");
   page += F("<h2><table>");
   page += F("<tr><td>Tilt:</td><td>");
@@ -995,11 +995,11 @@ void WiFiManager::handleMnt()
 
   // we reset the timeout
   _configPortalStart = millis();
-  String page = FPSTR(HTTP_HEAD);
+  String page = FPSTR(HTTP_HEADER);
   page.replace("{v}", "Maintenance");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
-  page += FPSTR(HTTP_HEAD_END);
+  page += FPSTR(HTTP_HEADER_END);
   page += F("<h2>Offset Calibration</h2><br>Before proceeding with calibration make sure the boar is well leveled, according to this picture:<br>");
   page += FPSTR(HTTP_ISPINDEL_IMG);
   page += F("<br><form action=\"/offset\" method=\"get\"><button class=\"btn\">calibrate</button></form><br/>");
@@ -1027,7 +1027,7 @@ void WiFiManager::handleOffset()
 
   header();
 
-  String page = FPSTR(HTTP_HEAD);
+  String page = FPSTR(HTTP_HEADER);
   page.replace("{v}", "calibrate Offset");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
@@ -1035,7 +1035,7 @@ void WiFiManager::handleOffset()
 
   if (offset.getStatus() != "done!")
     page += F("<META HTTP-EQUIV=\"refresh\" CONTENT=\"120;url=http://192.168.4.1/\">");
-  page += FPSTR(HTTP_HEAD_END);
+  page += FPSTR(HTTP_HEADER_END);
   page += F("<h1>calibrate Offset</h1><hr>");
   page += F("<table>");
   page += F("<tr><td>");
@@ -1133,12 +1133,12 @@ void WiFiManager::handleReset()
 {
   DEBUG_WM(F("Reset"));
   header();
-  String page = FPSTR(HTTP_HEAD);
+  String page = FPSTR(HTTP_HEADER);
   page.replace("{v}", "WiFi Information");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
   page += _customHeadElement;
-  page += FPSTR(HTTP_HEAD_END);
+  page += FPSTR(HTTP_HEADER_END);
   page += F("Module will reset in a few seconds.");
   page += FPSTR(HTTP_END);
   server->send(200, "text/html", page);
