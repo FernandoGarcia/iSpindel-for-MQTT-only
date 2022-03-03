@@ -9,4 +9,5 @@ group :jekyll_plugins do
   gem 'rouge'
   gem 'github-pages'
   gem 'nokogiri', '>= 1.13.2'
+  gem 'cmark-gfm', '>=0.23.4'
 end
