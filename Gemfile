@@ -8,6 +8,6 @@ group :jekyll_plugins do
   gem 'wdm', '>= 0.1.0' if Gem.win_platform?
   gem 'rouge'
   gem 'github-pages'
-  gem 'nokogiri', '>= 1.13.4'
+  gem 'nokogiri', '>= 1.13.5'
   gem 'cmark-gfm', '>=0.23.4'
 end
